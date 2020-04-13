@@ -3,32 +3,32 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function (){
-	var myCoords = new google.maps.LatLng(latitude,longitude);
+	let myCoords = new google.maps.LatLng(latitude, longitude);
 
 	function initialize() {
-		var mapOptions = {
+		let mapOptions = {
 			center: myCoords,
 			zoom: 10,
 			scrollwheel: false
 		};
 
-		var map = new google.maps.Map(document.getElementById('destination-map'), mapOptions);
+		let map = new google.maps.Map(document.getElementById('destination-map'), mapOptions);
 
-		var image = {
+		let image = {
 			url: "<%= asset_path 'tts_icon.jpg' %>",
 			scaledSize: new google.maps.Size(65, 65)
 		};
 
-		var marker = new google.maps.Marker({
+		let marker = new google.maps.Marker({
 			position: myCoords,
 			map: map,
 			title: address,
 			animation: google.maps.Animation.DROP
 		});
 
-		var contentString = '<h3>' + description + '</h3>';
+		let contentString = '<h3>' + description + '</h3>';
 
-		var infoWindow = new google.maps.InfoWindow({
+		let infoWindow = new google.maps.InfoWindow({
 			content: contentString
 		});
 

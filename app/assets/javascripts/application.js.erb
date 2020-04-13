@@ -16,23 +16,23 @@
 //= require_tree .
 
 $(document).ready(function (){
-	var myCoords = new google.maps.LatLng(33.784655, -84.421682);
+	let myCoords = new google.maps.LatLng(33.784655, -84.421682);
 
 	function initialize() {
-		var mapOptions = {
+		let mapOptions = {
 			center: { lat: 33.784655, lng: -84.421682 },
 			zoom: 15,
 			scrollwheel: false
 		};
 
-		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		let map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-		var image = {
+		let image = {
 			url: "<%= asset_path 'tts_icon.jpg' %>",
 			scaledSize: new google.maps.Size(65, 65)
 		};
 
-		var marker = new google.maps.Marker({
+		let marker = new google.maps.Marker({
 			position: myCoords,
 			map: map,
 			title: 'Tech Talent South',
@@ -40,9 +40,9 @@ $(document).ready(function (){
 			animation: google.maps.Animation.DROP
 		});
 
-		var contentString = '<h2>Tech Talent South</h2>' + '<p>Learn to Code!</p>';
+		 contentString = '<h2>Tech Talent South</h2>' + '<p>Learn to Code!</p>';
 
-		var infoWindow = new google.maps.InfoWindow({
+		let infoWindow = new google.maps.InfoWindow({
 			content: contentString
 		});
 
